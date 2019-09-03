@@ -2,9 +2,9 @@ All problem statements can be found at:
 https://www.hackerrank.com/interview/interview-preparation-kit/warmup/challenges
 
 
-Approaches:
+# Approaches:
 
-Problem 1: Sock Merchant
+## Problem 1: Sock Merchant
 The problem revolves around finding the count of unique entities in an array of repeating entities. 
 I maintained two arrays: one for holding the unique values and second to count the corresponding occurances of the unique values. 
 Once the master array of repeating entities is traversed, the array that maintains the occurances is integer divided by 2 
