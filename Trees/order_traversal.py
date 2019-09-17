@@ -22,6 +22,10 @@ class Traversal:
         :return: list of pre-order traversed node values
         """
 
+        # Ensuring that the list cleaner code does not append to previous result
+        if self.cleaned_list:
+            self.clear_cleaned_list()
+
         if not root.has_children():
             return root.val
 
@@ -67,10 +71,8 @@ if __name__ == '__main__':
     preorder = traversal_object.traverse(root=tree, mode=TraverseMode.PRE_ORDER)
     print(traversal_object.clean_list(preorder))
 
-    traversal_object.clear_cleaned_list()
     inorder = traversal_object.traverse(root=tree, mode=TraverseMode.IN_ORDER)
     print(traversal_object.clean_list(inorder))
 
-    traversal_object.clear_cleaned_list()
     postorder = traversal_object.traverse(root=tree, mode=TraverseMode.POST_ORDER)
     print(traversal_object.clean_list(postorder))
