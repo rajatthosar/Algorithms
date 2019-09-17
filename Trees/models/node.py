@@ -18,7 +18,7 @@ class Node:
 
         :return: Boolean [True/False]
         """
-        return self.has_left_child() or self.has_children()
+        return self.has_left_child() or self.has_right_child()
 
     def has_left_child(self):
         """

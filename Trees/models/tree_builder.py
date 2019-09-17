@@ -1,13 +1,22 @@
 from enum import Enum, auto
-from Trees.models.node import Node
+from models.node import Node
 
 
-class Mode(Enum):
+class GenMode(Enum):
     """
     An enumerator to choose from the available modes
     """
     BST = auto()
     RANDOM = auto()
+
+
+class TraverseMode(Enum):
+    """
+    An Enumerator to choose type of Traversal
+    """
+    PRE_ORDER = auto()
+    IN_ORDER = auto()
+    POST_ORDER = auto()
 
 
 class Builder:
@@ -18,7 +27,7 @@ class Builder:
     root_node = None
 
     def __init__(self, mode, values):
-        if mode == Mode.BST and values is not None:
+        if mode == GenMode.BST and values is not None:
             leaves = [Node(val=value) for value in values]
             root = leaves[0]
             self.root_node = root
@@ -53,6 +62,6 @@ class Builder:
 
 
 # nodes = [10, 5, 7, 9, 12, 19, 8, 5, 21, 11]
-# tree_builder_object = Builder(Mode.BST, values=nodes)
+# tree_builder_object = Builder(GenMode.BST, values=nodes)
 # root = tree_builder_object.get_tree()
 # print(root)
